@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
 jobs:
+  check-author:
+    runs-on: ubuntu-latest
+    steps:
+    - name: check-author
+      run: echo "$ {{ github.event.pusher.name }}""
   image-push:
      runs-on: ubuntu-latest
      steps:
